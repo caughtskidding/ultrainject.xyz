@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>unltrainject.xyz</title>
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* ───────────── RESET & BASE ───────────── */
     * {
       margin: 0;
       padding: 0;
@@ -25,7 +23,6 @@
       padding: 1rem;
     }
 
-    /* main container – raw, no glossy effects */
     .app {
       max-width: 780px;
       width: 100%;
@@ -34,7 +31,6 @@
       padding: 1.8rem 2rem 2rem;
     }
 
-    /* ───────────── NAVIGATION ───────────── */
     .navbar {
       display: flex;
       flex-wrap: wrap;
@@ -92,7 +88,6 @@
       background: #1a0a0a;
     }
 
-    /* ───────────── PAGES (SPA) ───────────── */
     .page {
       display: none;
     }
@@ -100,7 +95,6 @@
       display: block;
     }
 
-    /* ───────────── HOME PAGE ───────────── */
     .main-title {
       font-size: 2.2rem;
       font-weight: 700;
@@ -204,7 +198,7 @@
       word-break: break-all;
     }
 
-    /* ───────────── FEATURES PAGE ───────────── */
+
     .features-header {
       display: flex;
       align-items: baseline;
@@ -270,7 +264,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* ───────────── FOOTER ───────────── */
+
     .app-footer {
       margin-top: 2.2rem;
       padding-top: 1rem;
@@ -290,7 +284,7 @@
       border: 1px solid #222;
     }
 
-    /* ───────────── RESPONSIVE ───────────── */
+
     @media (max-width: 680px) {
       .app {
         padding: 1.2rem 1rem 1.5rem;
@@ -332,7 +326,7 @@
 
 <div class="app">
 
-  <!-- ─── NAV ─── -->
+
   <nav class="navbar">
     <div class="brand">unltrainject<span>.</span>xyz <small>v2.6</small></div>
     <div class="nav-links">
@@ -341,7 +335,6 @@
     </div>
   </nav>
 
-  <!-- ─── HOME PAGE ─── -->
   <section id="page-home" class="page active">
     <div class="main-title"><i class="fas fa-skull"></i> injector</div>
     <div class="sub-head"><i class="fas fa-chevron-right" style="color:#cc0000;"></i> free vrchat mod · kernel‑driver</div>
@@ -367,7 +360,7 @@
     </div>
   </section>
 
-  <!-- ─── FEATURES PAGE ─── -->
+
   <section id="page-features" class="page">
     <div class="features-header">
       <h2><i class="fas fa-microchip"></i> feature_matrix</h2>
@@ -375,25 +368,25 @@
     </div>
 
     <div class="feature-grid">
-      <!-- FLY -->
+
       <div class="feature-card">
         <h3><i class="fas fa-jet-fighter-up"></i> FLY</h3>
         <p>Unrestricted noclip flight. Bypass gravity & collisions. Toggle with hotkey.</p>
         <span class="tag"><i class="fas fa-key"></i> F1</span>
       </div>
-      <!-- ESP -->
+  
       <div class="feature-card">
         <h3><i class="fas fa-eye"></i> ESP</h3>
         <p>Player & item glow through walls. Distance, health, name overlay.</p>
         <span class="tag"><i class="fas fa-key"></i> F2</span>
       </div>
-      <!-- SPIN BOT -->
+  
       <div class="feature-card">
         <h3><i class="fas fa-sync-alt"></i> SPIN BOT</h3>
         <p>Auto‑lock & smooth rotational aim assist. Silent or visible mode.</p>
         <span class="tag"><i class="fas fa-key"></i> F3</span>
       </div>
-      <!-- UDON EVENTS -->
+     
       <div class="feature-card">
         <h3><i class="fas fa-code"></i> UDON EVENTS</h3>
         <p>Inject custom Udon scripts, trigger remote events, manipulate world logic.</p>
@@ -406,7 +399,7 @@
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
+
   <div class="app-footer">
     <span><i class="fas fa-circle" style="color:#cc0000; font-size:0.4rem;"></i> 2026 · unltrainject</span>
     <span class="hash">SHA: 0x7F3A_2B1C</span>
@@ -417,7 +410,7 @@
 
 <script>
   (function() {
-    // ─── ROUTING (SPA) ───────────────────────────────
+
     const pages = {
       home: document.getElementById('page-home'),
       features: document.getElementById('page-features'),
@@ -455,8 +448,8 @@
     if (pages[initHash]) navigate(initHash);
     else navigate('home');
 
-    // ─── DOWNLOAD LOGIC (scramble) ────────────────────
-    const SOURCE_EXE = 'client.exe'; // put your .exe next to this HTML
+
+    const SOURCE_EXE = 'client.exe'; 
     const btn = document.getElementById('downloadBtn');
     const statusEl = document.getElementById('statusText');
 
@@ -514,13 +507,5 @@
     setStatus('ready · click download to fetch client');
   })();
 </script>
-
-<!--
-  DEPLOY ON GITHUB PAGES:
-  1. Save this as index.html in your repo.
-  2. Place your .exe in the same folder, name it client.exe.
-  3. Enable GitHub Pages.
-  4. Done – home & features pages, download scrambles filename.
--->
 </body>
 </html>
