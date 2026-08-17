@@ -264,6 +264,52 @@
       letter-spacing: 0.5px;
     }
 
+    /* ─── INSTALL PAGE ─── */
+    .install-steps {
+      background: #0a0a0a;
+      border: 1px solid #222;
+      padding: 1.5rem 1.2rem;
+      border-left: 4px solid #cc0000;
+    }
+    .install-steps ol {
+      list-style: none;
+      counter-reset: step;
+      padding: 0;
+    }
+    .install-steps li {
+      counter-increment: step;
+      padding: 0.6rem 0 0.6rem 2.2rem;
+      position: relative;
+      border-bottom: 1px solid #1a1a1a;
+      font-size: 0.95rem;
+      color: #cccccc;
+      line-height: 1.5;
+    }
+    .install-steps li:last-child {
+      border-bottom: none;
+    }
+    .install-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      background: #cc0000;
+      color: #fff;
+      width: 1.5rem;
+      height: 1.5rem;
+      text-align: center;
+      line-height: 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .install-steps li i {
+      color: #cc0000;
+      margin-right: 0.5rem;
+    }
+    .install-steps .highlight {
+      color: #cc0000;
+      font-weight: 700;
+    }
 
     .app-footer {
       margin-top: 2.2rem;
@@ -332,9 +378,11 @@
     <div class="nav-links">
       <a href="#home" class="active" data-page="home">~/home</a>
       <a href="#features" data-page="features">~/features</a>
+      <a href="#install" data-page="install">~/install</a>
     </div>
   </nav>
 
+  <!-- HOME -->
   <section id="page-home" class="page active">
     <div class="main-title"><i class="fas fa-skull"></i> injector</div>
     <div class="sub-head"><i class="fas fa-chevron-right" style="color:#cc0000;"></i> free vrchat client · kernel‑driver</div>
@@ -360,7 +408,7 @@
     </div>
   </section>
 
-
+  <!-- FEATURES -->
   <section id="page-features" class="page">
     <div class="features-header">
       <h2><i class="fas fa-microchip"></i> feature_matrix</h2>
@@ -399,9 +447,30 @@
     </div>
   </section>
 
+  <!-- INSTALL -->
+  <section id="page-install" class="page">
+    <div class="features-header">
+      <h2><i class="fas fa-wrench"></i> install_guide</h2>
+      <span class="badge">step‑by‑step</span>
+    </div>
+
+    <div class="install-steps">
+      <ol>
+        <li><i class="fas fa-times-circle"></i> <span class="highlight">Close VRChat</span> – make sure the game is fully shut down before proceeding.</li>
+        <li><i class="fas fa-shield-halved"></i> <span class="highlight">Disable antivirus</span> – temporarily turn off Windows Defender or any third‑party AV (they may flag the injector).</li>
+        <li><i class="fas fa-download"></i> <span class="highlight">Download</span> – click the <span style="color:#cc0000;">download client</span> button on the home page.</li>
+        <li><i class="fas fa-play"></i> <span class="highlight">Run the file</span> – execute the downloaded <span style="color:#cc0000;">.exe</span> as administrator (right‑click → Run as administrator).</li>
+        <li><i class="fas fa-check-circle"></i> <span style="color:#cc0000;">Done</span> – launch VRChat and enjoy the features. All hotkeys are listed on the features page.</li>
+      </ol>
+      <p style="margin-top:1rem; font-size:0.8rem; color:#666; border-top:1px solid #1a1a1a; padding-top:0.8rem;">
+        <i class="fas fa-exclamation-triangle" style="color:#cc0000;"></i> Re‑enable your antivirus after the injection is complete.
+      </p>
+    </div>
+  </section>
+
 
   <div class="app-footer">
-    <span><i class="fas fa-circle" style="color:#cc0000; font-size:0.4rem;"></i> 2026 · unltrainject</span>
+    <span><i class="fas fa-circle" style="color:#cc0000; font-size:0.4rem;"></i> 2026 · eviltucker.net</span>
     <span class="hash">SHA: 0x7F3A_2B1C</span>
     <span><i class="fas fa-user-secret"></i> null‑team</span>
   </div>
@@ -414,6 +483,7 @@
     const pages = {
       home: document.getElementById('page-home'),
       features: document.getElementById('page-features'),
+      install: document.getElementById('page-install'),
     };
     const navLinks = document.querySelectorAll('.nav-links a');
 
